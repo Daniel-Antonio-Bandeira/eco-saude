@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Saúde — Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body class="login-body">
+
+  <div class="login-box">
+    <div class="login-logo">🌿 Eco Saúde</div>
+
+    <!-- ABAS -->
+    <div class="abas">
+      <button class="aba ativa" id="abaEntrar" onclick="mostrarAba('entrar')">Entrar</button>
+      <button class="aba" id="abaCriar" onclick="mostrarAba('criar')">Criar conta</button>
+    </div>
+
+    <!-- FORM LOGIN -->
+    <form id="formLogin" class="form-aba">
+      <div class="field">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" placeholder="seu@email.com" required />
+      </div>
+      <div class="field">
+        <label for="loginSenha">Senha</label>
+        <input type="password" id="loginSenha" placeholder="••••••••" required />
+      </div>
+      <p class="erro-msg" id="erroLogin"></p>
+      <button type="submit">Entrar</button>
+      <a href="index.html" class="link-visitante">Continuar como visitante →</a>
+    </form>
+
+    <!-- FORM REGISTRO -->
+    <form id="formRegistro" class="form-aba" style="display:none">
+      <div class="field">
+        <label for="regNome">Nome</label>
+        <input type="text" id="regNome" placeholder="Seu nome" required />
+      </div>
+      <div class="field">
+        <label for="regEmail">Email</label>
+        <input type="email" id="regEmail" placeholder="seu@email.com" required />
+      </div>
+      <div class="field">
+        <label for="regSenha">Senha</label>
+        <input type="password" id="regSenha" placeholder="Mínimo 6 caracteres" required />
+      </div>
+      <p class="erro-msg" id="erroRegistro"></p>
+      <button type="submit">Criar conta</button>
+    </form>
+
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

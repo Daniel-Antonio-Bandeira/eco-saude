@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Saúde — Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">🌿 Eco Saúde</div>
+      <p class="tagline">Dashboard de Estatísticas</p>
+    </div>
+  </header>
+
+  <nav class="nav-bar">
+    <a href="index.html">📋 Denúncias</a>
+    <a href="dashboard.html" class="ativo">📊 Dashboard</a>
+  </nav>
+
+  <main>
+
+    <!-- CARDS DE RESUMO -->
+    <section class="resumo-grid">
+      <div class="resumo-card">
+        <div class="resumo-icone">📋</div>
+        <div class="resumo-info">
+          <span class="resumo-numero" id="totalDenuncias">—</span>
+          <span class="resumo-label">Total de denúncias</span>
+        </div>
+      </div>
+      <div class="resumo-card pendente">
+        <div class="resumo-icone">⏳</div>
+        <div class="resumo-info">
+          <span class="resumo-numero" id="totalPendente">—</span>
+          <span class="resumo-label">Pendentes</span>
+        </div>
+      </div>
+      <div class="resumo-card analise">
+        <div class="resumo-icone">🔍</div>
+        <div class="resumo-info">
+          <span class="resumo-numero" id="totalAnalise">—</span>
+          <span class="resumo-label">Em análise</span>
+        </div>
+      </div>
+      <div class="resumo-card resolvida">
+        <div class="resumo-icone">✅</div>
+        <div class="resumo-info">
+          <span class="resumo-numero" id="totalResolvida">—</span>
+          <span class="resumo-label">Resolvidas</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRÁFICOS -->
+    <div class="graficos-grid">
+
+      <div class="card">
+        <h2>Denúncias por tipo</h2>
+        <canvas id="graficoPorTipo"></canvas>
+      </div>
+
+      <div class="card">
+        <h2>Status geral</h2>
+        <canvas id="graficoStatus"></canvas>
+      </div>
+
+      <div class="card grafico-largo">
+        <h2>Denúncias por mês</h2>
+        <canvas id="graficoPorMes"></canvas>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

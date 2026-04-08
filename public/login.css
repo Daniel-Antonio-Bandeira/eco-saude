@@ -1,0 +1,78 @@
+.login-body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a3a2a 0%, #2d6a4f 100%);
+}
+
+.login-box {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+
+.login-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* Abas */
+.abas {
+  display: flex;
+  background: #f0f7f1;
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.aba {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: background .2s, color .2s;
+  width: auto;
+  margin-top: 0;
+}
+
+.aba.ativa {
+  background: #fff;
+  color: var(--green-dark);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+/* Erro */
+.erro-msg {
+  color: #c0392b;
+  font-size: .83rem;
+  min-height: 20px;
+  margin-bottom: 8px;
+}
+
+/* Link visitante */
+.link-visitante {
+  display: block;
+  text-align: center;
+  margin-top: 14px;
+  color: var(--text-soft);
+  font-size: .85rem;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.link-visitante:hover { color: var(--green-mid); }

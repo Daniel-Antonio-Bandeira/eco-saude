@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Saúde — Denúncias</title>
+
+  <!-- Leaflet (mapa) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">🌿 Eco Saúde</div>
+      <p class="tagline">Registre problemas ambientais e de saúde na sua região</p>
+    </div>
+  </header>
+
+  <nav class="nav-bar">
+    <a href="index.html" class="ativo">📋 Denúncias</a>
+    <a href="dashboard.html">📊 Dashboard</a>
+  </nav>
+
+  <main>
+
+    <!-- FORMULÁRIO -->
+    <section class="card form-section">
+      <h2>Nova Denúncia</h2>
+
+      <form id="formDenuncia">
+
+        <div class="field">
+          <label for="tipo">Tipo de problema</label>
+          <select id="tipo" name="tipo" required>
+            <option value="" disabled selected>Selecione...</option>
+            <option value="Lixo irregular">🗑️ Lixo irregular</option>
+            <option value="Água contaminada">💧 Água contaminada</option>
+            <option value="Esgoto a céu aberto">🚰 Esgoto a céu aberto</option>
+            <option value="Queimada">🔥 Queimada</option>
+            <option value="Descarte ilegal">⚠️ Descarte ilegal</option>
+            <option value="Risco à saúde">🏥 Risco à saúde</option>
+            <option value="Outro">📋 Outro</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="descricao">Descrição</label>
+          <textarea id="descricao" name="descricao" rows="3"
+            placeholder="Descreva o problema com detalhes..." required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="foto">Foto (opcional)</label>
+          <div class="upload-area" id="uploadArea">
+            <input type="file" id="foto" name="foto" accept="image/*" hidden>
+            <div class="upload-placeholder" id="uploadPlaceholder">
+              <span class="upload-icon">📷</span>
+              <span>Clique ou arraste uma foto</span>
+              <small>JPG, PNG ou WebP — máx. 5MB</small>
+            </div>
+            <img id="previewFoto" src="" alt="Preview" hidden />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Localização</label>
+          <div class="loc-row">
+            <input type="number" id="latitude"  name="latitude"  placeholder="Latitude"  step="any" readonly>
+            <input type="number" id="longitude" name="longitude" placeholder="Longitude" step="any" readonly>
+            <button type="button" id="btnLocalizacao" class="btn-loc">📍 Pegar minha localização</button>
+          </div>
+          <small class="loc-hint" id="locHint">A localização será marcada no mapa.</small>
+        </div>
+
+        <button type="submit" id="btnEnviar">Enviar denúncia</button>
+
+      </form>
+    </section>
+
+    <!-- MAPA -->
+    <section class="card map-section">
+      <h2>Mapa de Denúncias</h2>
+      <div id="mapa"></div>
+    </section>
+
+    <!-- LISTA -->
+    <section class="lista-section">
+      <h2>Denúncias registradas</h2>
+      <div id="listaDenuncias"></div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
