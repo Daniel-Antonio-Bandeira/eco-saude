@@ -71,13 +71,18 @@
         </div>
 
         <div class="field">
-          <label>Localização</label>
+          <label for="endereco">Endereço</label>
+          <input type="text" id="endereco" name="endereco" placeholder="Ex: Rua das Flores, 123 - Bairro Centro" />
+        </div>
+
+        <div class="field">
+          <label>Localização GPS (opcional)</label>
           <div class="loc-row">
             <input type="number" id="latitude"  name="latitude"  placeholder="Latitude"  step="any" readonly>
             <input type="number" id="longitude" name="longitude" placeholder="Longitude" step="any" readonly>
             <button type="button" id="btnLocalizacao" class="btn-loc">📍 Pegar minha localização</button>
           </div>
-          <small class="loc-hint" id="locHint">A localização será marcada no mapa.</small>
+          <small class="loc-hint" id="locHint">A localização GPS será marcada no mapa.</small>
         </div>
 
         <button type="submit" id="btnEnviar">Enviar denúncia</button>

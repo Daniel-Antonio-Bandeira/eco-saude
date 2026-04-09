@@ -124,13 +124,13 @@ app.get('/auth/me', autenticar, (req, res) => {
 // ── POST /denuncias (qualquer usuário logado) ────────────────────────────────
 app.post('/denuncias', upload.single('foto'), async (req, res) => {
   try {
-    const { tipo, descricao, latitude, longitude } = req.body;
+    const { tipo, descricao, latitude, longitude, endereco } = req.body;
     const foto = req.file ? req.file.filename : null;
 
     const result = await pool.query(
-      `INSERT INTO denuncias (tipo, descricao, foto, latitude, longitude)
-       VALUES ($1, $2, $3, $4, $5) RETURNING *`,
-      [tipo, descricao, foto, latitude || null, longitude || null]
+      `INSERT INTO denuncias (tipo, descricao, foto, latitude, longitude, endereco)
+       VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
+      [tipo, descricao, foto, latitude || null, longitude || null, endereco || null]
     );
 
     res.status(201).json({ message: 'Denúncia criada com sucesso!', denuncia: result.rows[0] });
@@ -145,7 +145,7 @@ app.post('/denuncias', upload.single('foto'), async (req, res) => {
 app.get('/denuncias', async (req, res) => {
   try {
     const result = await pool.query(
-      `SELECT id, tipo, descricao, foto, latitude, longitude, data_criacao, status
+      `SELECT id, tipo, descricao, foto, latitude, longitude, endereco, data_criacao, status
        FROM denuncias ORDER BY data_criacao DESC`
     );
     res.json(result.rows);

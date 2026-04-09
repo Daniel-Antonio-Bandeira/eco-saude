@@ -1,4 +1,4 @@
-const API = 'https://eco-saude.onrender.com';
+const API = 'http://localhost:3000';
 
 // ── Autenticação ─────────────────────────────────────────────────────────────
 const token   = localStorage.getItem('token');
@@ -111,6 +111,7 @@ form.addEventListener('submit', async (e) => {
   formData.append('descricao', document.getElementById('descricao').value);
   formData.append('latitude',  document.getElementById('latitude').value);
   formData.append('longitude', document.getElementById('longitude').value);
+  formData.append('endereco',  document.getElementById('endereco').value);
   if (inputFoto.files[0]) formData.append('foto', inputFoto.files[0]);
 
   try {
@@ -167,9 +168,11 @@ function renderizarLista(dados) {
       ? '<img class="denuncia-foto" src="' + API + '/uploads/' + d.foto + '" alt="Foto" loading="lazy" />'
       : '';
 
-    const locHTML = (d.latitude && d.longitude)
-      ? '<span>' + parseFloat(d.latitude).toFixed(4) + ', ' + parseFloat(d.longitude).toFixed(4) + '</span>'
-      : '';
+    const locHTML = d.endereco
+      ? '<span>📍 ' + d.endereco + '</span>'
+      : (d.latitude && d.longitude)
+        ? '<span>📍 ' + parseFloat(d.latitude).toFixed(4) + ', ' + parseFloat(d.longitude).toFixed(4) + '</span>'
+        : '';
 
     const statusAtual = d.status || 'Pendente';
     const statusClasses = { 'Pendente': 'status-pendente', 'Em análise': 'status-analise', 'Resolvida': 'status-resolvida' };
