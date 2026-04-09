@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000';
+const API = 'https://eco-saude.onrender.com';
 
 function mostrarAba(aba) {
   document.getElementById('formLogin').style.display    = aba === 'entrar' ? 'block' : 'none';
