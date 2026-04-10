@@ -139,16 +139,6 @@ Acesse em: `http://localhost:3000`
 
 ---
 
-## 📸 Screenshots
-
-> 🌿 Página principal com formulário e mapa interativo
-
-> 📊 Dashboard com gráficos de estatísticas
-
-> 🔐 Tela de login com opção de cadastro
-
----
-
 ## 📚 Aprendizados
 
 Este projeto foi desenvolvido como parte de um **Projeto de Extensão Universitária** e envolveu:
