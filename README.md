@@ -117,12 +117,12 @@ Acesse em: `http://localhost:3000`
 
 ---
 
-## 🔑 Credenciais de Teste
+## 🔑 Acesso
 
-| Perfil | Email | Senha |
-|--------|-------|-------|
-| Administrador | admin@ecosaude.com | admin123 |
-| Cidadão | (cadastre-se na plataforma) | — |
+| Perfil | Como acessar |
+|--------|-------------|
+| Administrador | Entre em contato com o responsável pelo projeto |
+| Cidadão | Cadastre-se diretamente na plataforma |
 
 ---
 
