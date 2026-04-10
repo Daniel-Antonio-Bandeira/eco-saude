@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/denuncias';
+const API = 'https://eco-saude.onrender.com/denuncias';
 
 const CORES_TIPO = [
   '#2d6a4f', '#52b788', '#95d5b2', '#f4a261',
